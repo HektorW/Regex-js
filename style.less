@@ -1,0 +1,102 @@
+@main-font: Arial;
+@bord-rad: 10px;
+
+body {
+  background-image: url(/res/background.png);
+}
+
+header {
+  text-align: center;
+  font-family: @main-font;
+}
+
+main {
+  text-align: center;
+  font-family: @main-font;
+
+  .input {
+    font-size: 1.2em;
+
+    input {
+      font-size: 1em;
+    }
+  }
+
+  .results {
+    // border: solid thin #1EBA60;
+    border-radius: @bord-rad;
+    margin: auto;
+    width: 80%;
+    // background-color: #16C7C5;
+
+    .result {
+      border: solid thin #1D1D1D;
+      border-radius: inherit;
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      background-color: white;
+      // background-image: url(/res/subtlebackgrounds/blackorchid.png);
+      // background-image: url(/res/subtlebackgrounds/bedge_grunge.png);
+      background-image: url(/res/subtlebackgrounds/low_contrast_linen.png);
+
+      // @font-color: rgb(151,151,151);
+      @font-color: #979797;
+      @out-color: white;
+      @back-color: rgba(256,256,256,0.3);
+      @separator-color: #147A3F;
+
+      .name {
+        text-align: left;
+        margin-top: 0px;
+        margin-left: 10px;
+        color: @font-color;
+        text-shadow: 2px 1px black;
+      }
+
+      .code, .output {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: @back-color;
+        border-radius: @bord-rad;
+        color: @out-color;
+        text-shadow: 1px 1px black;
+
+        &.false {
+          color: red;
+        }
+        &.true {
+          color: green;
+        }
+      }
+
+      .separator {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: @font-color;
+      }
+
+      .separator::before, .separator::after {
+        content: "";
+        display: inline-block;
+        border-top: solid thin @separator-color;
+        width: 30%;
+        height:0;
+        margin: 0.25em 5px;
+      }
+    }
+  }
+}
+
+
+
+.false {
+  color: red;
+  text-shadow: 1px 1px black;
+}
+.true {
+  color: green;
+  text-shadow: 1px 1px black;
+}

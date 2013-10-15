@@ -1,0 +1,27 @@
+<section data-name="{name}" class="result">
+  <h3 class="name">{name}</h3>
+  <div class="code">
+    <code>
+      {code}
+    </code>
+  </div>
+  <div class="separator">returns</div>
+  <div class="output {class}">
+
+    {#result.iterations}
+      [$idx] <br>
+      {.}
+    {:else}
+      {result}
+    {/result.iterations}
+
+    <!-- Check possible to include different templates -->
+    <!-- {#result}
+      {?.result}
+        {.result}
+      {:else}
+        {.}
+      {/.result}
+    {/result} -->
+  </div>
+</section>
